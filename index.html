@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raid Planning Tool
+    </title>
+    <style>
+        /* Basic styling for the form and table */
+        table {
+            border-collapse: collapse;
+            width: 85%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        #raiderForm div{
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .dark-mode{
+            background-color: rgb(87, 87, 87);
+            color: white;
+        }
+        .Dark-Mode-Button{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Raid Planning Tool</h1>
+    <form id="raiderForm">
+        <form id="raiderForm">
+            <div>
+              <label for="characterName">Character Name:</label>
+              <input type="text" id="characterName" required>
+            </div>
+          
+            <div>
+              <label for="class">Class:</label>
+              <input type="text" id="class" required>
+            </div>
+          
+            <div>
+              <label for="spec">Spec:</label>
+              <input type="text" id="spec" required>
+            </div>
+          
+            <div>
+              <label for="itemLevel">Item Level:</label>
+              <input type="number" id="itemLevel" required>
+            </div>
+          
+            <button type="button" onclick="addRaider()">Add Raider</button>
+          </form>
+    </form>
+
+    <script>
+        function toggleDarkMode() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+}
+    </script>
+
+    <div class="Dark-Mode-Button">
+        <button onclick="toggleDarkMode()">Dark Mode</button>
+    </div>
+
+    <h2>Raider List</h2>
+    <table id="raiderTable">
+        <thead>
+            <tr>
+                <th>Character Name</th>
+                <th>Class</th>
+                <th>Spec</th>
+                <th>Item Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Raider data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        function addRaider() {
+            const characterName = document.getElementById("characterName").value;
+            const raiderClass = document.getElementById("class").value;
+            const spec = document.getElementById("spec").value;
+            const itemLevel = document.getElementById("itemLevel").value;
+
+            const table = document.getElementById("raiderTable").getElementsByTagName("tbody")[0];
+            const newRow = table.insertRow();
+            newRow.innerHTML = `
+                <td>${characterName}</td>
+                <td>${raiderClass}</td>
+                <td>${spec}</td>
+                <td>${itemLevel}</td>
+            `;
+
+            // Clear input fields
+            document.getElementById("characterName").value = "";
+            document.getElementById("class").value = "";
+            document.getElementById("spec").value = "";
+            document.getElementById("itemLevel").value = "";
+        }
+    </script>
+</body>
+</html>

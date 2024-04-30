@@ -1,0 +1,25 @@
+Instance: Molten Core 
+Instance ID: 2717
+
+Boss: Ragnaros
+Boss ID: 2717
+
+All Loot IDs: 2717
+-Sulfuras 
+-Crown of Destruction
+-Bloodfang Pants
+-Legplates of Wrath
+-Perdition's Blade
+--------------------------
+Instance: Castle Nathria 
+Instance ID: 13224
+
+Boss: Sire Denathrius 
+Boss ID: 13224
+
+All Loot IDs: 13224
+-Dreadfire Vessel
+-Sanguine Vintage
+-Manabound Mirror
+-Sadist Sinister Mask
+-Will of Remornia
